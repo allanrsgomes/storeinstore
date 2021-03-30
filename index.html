@@ -1,0 +1,530 @@
+<style>
+    .search-result__drop {
+        display: none;
+    }
+    
+    .search-result__mobile {
+        display: none;
+    }
+    
+    .search-result__products {
+        display: none;
+    }
+    
+    .msg-pbm-footer {
+        display: none;
+    }
+    
+    .pagination {
+        display: none;
+    }
+    
+    #storeinstore {
+        max-width: 970px;
+        height: 3220px;
+        margin: 0px auto 20px auto;
+    }
+    
+    #header-store {
+        display: block;
+    }
+    
+    #storeinstore #header-store .header-folha {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/folha-1-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 30%;
+        height: 500px;
+        padding-top: 10px;
+        z-index: 9;
+        left: -20px;
+        top: -20px;
+        position: absolute;
+    }
+    
+    #storeinstore #header-store .header-folhas {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo-folhas-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 90%;
+        height: 500px;
+        padding-top: 10px;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }
+    
+    #storeinstore #header-store .logo {
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    #storeinstore .logo img {
+        width: 150px;
+    }
+    
+    #storeinstore #header-store .container-text {
+        border-radius: 15px;
+        background-color: #ffffff;
+        color: #707070;
+        font-size: 14px;
+        font-family: 'Montserrat';
+        line-height: 24px;
+        opacity: 75%;
+        margin: 40px 20px;
+        padding: 40px 20px;
+        max-width: 870px;
+    }
+    
+    #storeinstore #header-store .container-text p {
+        width: 100%;
+    }
+    
+    #storeinstore #header-store .header-folha-2 {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/folha-2-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 30%;
+        padding-top: 90px;
+        left: 70%;
+        position: absolute;
+        z-index: 99;
+    }
+    
+    #storeinstore #produtos-1 {
+        display: block;
+        margin-top: -70px;
+    }
+    
+    #storeinstore #produtos-1 .container-dark {
+        background-image: linear-gradient(to bottom, #99A199, #8A9E88);
+        border-radius: 15px 15px 0 0;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-family: 'Montserrat';
+        line-height: 24px;
+        height: 280px;
+        text-align: center;
+        padding: 70px 15px 20px 15px;
+        text-transform: uppercase;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .folha-white {
+        margin: 20px 0;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .folha-white img {
+        width: 45px;
+        height: 40px;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .box-produto {
+        width: 50%;
+        text-align: center;
+        text-align: -webkit-center;
+        background: transparent!important;
+    }
+    
+    #storeinstore #produtos-2 .box-produto {
+        width: 100%;
+        text-align: center;
+        text-align: -webkit-center;
+        background: transparent!important;
+        z-index: 5;
+    }
+    
+    #storeinstore #produtos-desktop .box-produto {
+        width: 33%;
+        text-align: center;
+        text-align: -webkit-center;
+        background: transparent!important;
+    }
+    
+    #storeinstore #produtos-mobile .box-produto {
+        width: 50%;
+        text-align: center;
+        text-align: -webkit-center;
+        background: transparent!important;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .produto img,
+    #storeinstore #produtos-2 .produto img,
+    #storeinstore #produtos-desktop .produto img,
+    #storeinstore #produtos-mobile .produto img {
+        height: 216px;
+        width: 180px;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .legenda-produto,
+    #storeinstore #produtos-2 .legenda-produto,
+    #storeinstore #produtos-desktop .legenda-produto,
+    #storeinstore #produtos-mobile .legenda-produto {
+        height: 55px;
+        font-size: 13px;
+        color: #707070;
+        line-height: 13px;
+        text-transform: none;
+        width: 57%;
+        padding: 15px 0;
+    }
+    
+    #storeinstore #produtos-1 .container-dark .button-produto,
+    #storeinstore #produtos-2 .button-produto,
+    #storeinstore #produtos-desktop .button-produto,
+    #storeinstore #produtos-mobile .button-produto {
+        color: #FFFFFF;
+        background-color: #9BB599;
+        width: 153px;
+        height: 36px;
+        font-size: 13px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .cont-flex {
+        display: flex;
+    }
+    
+    #storeinstore #produtos-2 {
+        display: block;
+        margin-top: 240px;
+        border-bottom: 1px solid #DCDCDC;
+    }
+    
+    #storeinstore #produtos-2 .background-green {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/background-green.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        width: 60%;
+        height: 200px;
+        z-index: 1;
+    }
+    
+    #storeinstore #produtos-2 .background-folhas {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fern-leaves-circle-wooden.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        width: 100%;
+        height: 210px;
+        z-index: 0;
+    }
+    
+    #storeinstore .box-produto a:link,
+    #storeinstore .box-produto a:visited {
+        text-decoration: none;
+    }
+    
+    #storeinstore a:hover,
+    #storeinstore a:active {
+        color: #9BB599!important;
+        background-color: #FFFFFF!important;
+        border: 1px solid #9BB599!important;
+    }
+    
+    #storeinstore #produtos-desktop {
+        display: none;
+    }
+    
+    #storeinstore #produtos-mobile {
+        display: block;
+    }
+    
+    #storeinstore #produtos-desktop .conjunto-produtos,
+    #storeinstore #produtos-mobile .conjunto-produtos {
+        display: flex;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #DCDCDC;
+    }
+    
+    #storeinstore #footer-store {
+        display: block;
+        background: #ffff;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-1 {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo-imagem-1.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 155px;
+        margin: 60px 0px;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-mob-1 {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo-imagem-2.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 80%;
+        height: 600px;
+    }
+    
+    #storeinstore #footer-store .ingredientes {
+        color: #707070;
+        padding: 0px 25px 30px;
+        line-height: 25px;
+    }
+    
+    #storeinstore #footer-store .ingredientes .ingredientes-title {
+        font-size: 18px;
+    }
+    
+    #storeinstore #footer-store .ingredientes .ingredientes-text {
+        font-size: 14px;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-2 {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo-imagem-2.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 80%;
+        height: 600px;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-mob-2 {
+        background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo-imagem-1.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 300px;
+        margin: 30px 0px;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-mob-1 {
+        display: none;
+    }
+    
+    #storeinstore #footer-store .fundo-imagem-mob-2 {
+        display: none;
+    }
+    
+    @media screen and (min-width: 48em) {
+        #storeinstore {
+            height: 2360px;
+        }
+        #storeinstore #header-store .header-folha {
+            background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/folha-1-mobile.png');
+            background-size: 100%;
+            width: 17%;
+            height: 500px;
+            top: 40px;
+            left: 0px;
+        }
+        #storeinstore #header-store .header-folhas {
+            background-image: url('https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/fundo2-folhas-desktop.png');
+            height: 510px;
+            width: 70%;
+        }
+        #storeinstore #produtos-1 .container-dark {
+            height: 390px;
+        }
+        #storeinstore #header-store .container-text p {
+            width: 43%;
+        }
+        #storeinstore #header-store .container-text {
+            padding: 80px 80px;
+            margin: 40px auto;
+        }
+        #storeinstore #header-store .header-folha-2 {
+            background-size: 50%;
+            left: 88%;
+        }
+        #storeinstore #produtos-2 .background-green,
+        #storeinstore #produtos-2 .background-folhas,
+        #storeinstore #produtos-2,
+        #storeinstore #produtos-1 .cont-flex {
+            display: none;
+        }
+        #storeinstore #produtos-desktop {
+            margin-top: -170px;
+            display: block;
+        }
+        #storeinstore #produtos-mobile {
+            display: none;
+        }
+        #storeinstore #footer-store {
+            padding-top: 70px;
+        }
+        #storeinstore #footer-store .fundo-imagem-1 {
+            display: none;
+        }
+        #storeinstore #footer-store .fundo-imagem-2 {
+            display: none;
+        }
+        #storeinstore #footer-store .fundo-imagem-mob-1 {
+            display: block;
+        }
+        #storeinstore #footer-store .fundo-imagem-mob-2 {
+            display: block;
+        }
+        #storeinstore #footer-store .d-flex {
+            display: flex;
+        }
+    }
+</style>
+
+<div class="pure-u-1">
+    <section id="storeinstore">
+        <section id="header-store">
+            <div class="header-folha"></div>
+            <div class="header-folhas"></div>
+            <div class="container-text">
+                <div class="logo"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/logo-mobile.png" alt="Logo"></div>
+                <p>
+                    A ELEMENTO MINERAL nasceu da inspiração e do desejo de resgatar a simplicidade e sinergia com a natureza dos antigos rituais de beleza, e traduzi-los em produtos contemporâneos.
+                </p>
+                <p>
+                    Parte de um estilo de vida que busca harmonia e equilíbrio em todos os sentidos, os nossos produtos são concebidos para atender essa necessidade, com formulações livres de parabenos, corantes, triclosan, sulfatos, petrolatos, ingredientes de origem animal
+                    e sem testes em animais.
+                </p>
+                <div class="header-folha-2"></div>
+            </div>
+        </section>
+
+        <section id="produtos-1">
+            <div class="container-dark">
+                <div class="folha-white"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/folha-white.png" alt="Folha White"></div>
+                Conheça o poder dos <strong>produtos<br>naturais para sua pele</strong>
+                <div class="cont-flex">
+                    <div class="box-produto">
+                        <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/sabonete-elemento-mineral.png" alt="Sabonete Mineral"></div>
+                        <div class="legenda-produto">Sabonete facial Gommage 60g</div>
+                        <a href="https://www.panvel.com/panvel/sabonete-facial-elemento-mineral-gommage-com-cristais-de-quartzo-60g/p-113210" class="button-produto">VER MAIS</a>
+                    </div>
+
+                    <div class="box-produto">
+                        <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/mineral-lift-elemento-mineral.png" alt="Lift Mineral"></div>
+                        <div class="legenda-produto">Nude Balm Mineral Lift 30g</div>
+                        <a href="https://www.panvel.com/panvel/creme-elemento-mineral-nude-balm-mineral-lift-30g/p-113212" class="button-produto">VER MAIS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos-2">
+            <div class="background-green"></div>
+            <div class="background-folhas"></div>
+            <div class="box-produto">
+                <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/hidratante-facial.png" alt="Hidratante Facial"></div>
+                <div class="legenda-produto">Nude Balm Hidratante Facial Efeito Mate 50g</div>
+                <a href="https://www.panvel.com/panvel/hidratante-elemento-mineral-nude-balm-mineral-50g/p-113211" class="button-produto">VER MAIS</a>
+            </div>
+        </section>
+
+        <section id="produtos-mobile">
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/balsamo-hidratante.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bálsamo Hidratante Labial 5g</div>
+                    <a href="https://www.panvel.com/panvel/hidratante-labial-elemento-mineral-balsamo-5g/p-113213" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-vermelha.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Vermelha 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-vermelha-30g/p-113206" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-rosa.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Rosa 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-rosa-30g/p-113207" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-negra.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Negra 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-negra-30g/p-113209" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-verde.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Verde 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-verde-30g/p-113205" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-branca.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Branca 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-branca-da-amazonia-30g/p-113208" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos-desktop">
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/sabonete-elemento-mineral.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Sabonete Gommage Com Cristais De Quartzo 60g</div>
+                    <a href="https://www.panvel.com/panvel/sabonete-facial-elemento-mineral-gommage-com-cristais-de-quartzo-60g/p-113210" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/mineral-lift-elemento-mineral.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Nude Balm Mineral Lift 30g</div>
+                    <a href="https://www.panvel.com/panvel/creme-elemento-mineral-nude-balm-mineral-lift-30g/p-113212" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/balsamo-hidratante.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bálsamo Hidratante Labial 5g</div>
+                    <a href="https://www.panvel.com/panvel/hidratante-labial-elemento-mineral-balsamo-5g/p-113213" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/hidratante-facial.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Nude Balm Hidratante Facial Efeito Mate 50g</div>
+                    <a href="https://www.panvel.com/panvel/hidratante-elemento-mineral-nude-balm-mineral-50g/p-113211" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-vermelha.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Vermelha 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-vermelha-30g/p-113206" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-rosa.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Rosa 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-rosa-30g/p-113207" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+            <div class="conjunto-produtos">
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-negra.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Negra 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-negra-30g/p-113209" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-verde.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Verde 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-verde-30g/p-113205" class="button-produto">VER MAIS</a>
+                </div>
+                <div class="box-produto">
+                    <div class="produto"><img src="https://cdn1.staticpanvel.com.br/cdn_service/landpages/store/img/produtos/bio-argila-branca.png" alt="Hidratante Facial"></div>
+                    <div class="legenda-produto">Bio Argila Branca 30g</div>
+                    <a href="https://www.panvel.com/panvel/mascara-facial-elemento-mineral-bio-argila-branca-da-amazonia-30g/p-113208" class="button-produto">VER MAIS</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer-store">
+            <div class="d-flex">
+                <div class="fundo-imagem-1"></div>
+                <div class="fundo-imagem-mob-1"></div>
+                <div class="ingredientes">
+                    <div class="ingredientes-title">NOSSOS INGREDIENTES</div>
+                    <div class="ingredientes-text">
+                        <p>
+                            Rochas, cristais, metais, águas minerais, carregados de energia solar e magnética, fonte de oligoelementos que transformam-se em poderosos ingredientes cosméticos, fascinantes pela sua beleza estética e por suas propriedades terapêuticas e metafísicas.
+                        </p>
+                        <p>
+                            Esses fantásticos ativos naturais e orgânicos são a alma de nossos produtos, e em cada linha prestamos uma homenagem à Terra e a todos os elementos minerais que Ela nos concede.
+                        </p>
+                    </div>
+                    <div class="fundo-imagem-mob-2"></div>
+                </div>
+                <div class="fundo-imagem-2"></div>
+            </div>
+
+        </section>
+    </section>
+
+</div>
